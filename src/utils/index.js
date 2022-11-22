@@ -1,3 +1,3 @@
-export const ApiError = require ('./apiError');
-export const catchAsync = require ('./catchAsync');
-export const pick = require ('./pick');
+module.exports.ApiError = require ('./apiError');
+module.exports.catchAsync = require ('./catchAsync');
+module.exports.pick = require ('./pick');
