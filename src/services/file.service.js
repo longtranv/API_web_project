@@ -1,6 +1,6 @@
 const Cloudinary = require('../config/cloudinary');
 const Image = require('../models/image.model');
-const ApiError = require('../utils');
+const ApiError = require('../utils/apiError');
 const httpStatus = require('http-status');
 
 const upLoad = async (data, userid) =>{

@@ -1,6 +1,6 @@
 const httpStatus = require('http-status');
 const { User } = require('../models');
-const ApiError = require('../utils');
+const ApiError = require('../utils/apiError');
 
 /**
  * Create a user
@@ -27,6 +27,11 @@ const queryUsers = async (filter, options) => {
   const users = await User.paginate(filter, options);
   return users;
 };
+
+const getAllUser = async ()=>{
+  const user = await User.find();
+  return user;
+}
 
 /**
  * Get user by id
@@ -86,4 +91,5 @@ module.exports = {
   getUserByEmail,
   updateUserById,
   deleteUserById,
+  getAllUser
 };
