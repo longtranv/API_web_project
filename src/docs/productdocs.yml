@@ -1,0 +1,120 @@
+openapi: 3.0.1
+info:
+  title: Product
+  description: Product Management
+  version: '0.1'
+servers:
+  - url: https://mernappapi.onrender.com
+paths:
+  /v1/product:
+    post:
+      tags: product
+      description: Auto generated using Swagger Inspector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+            examples:
+              '0':
+                value: |-
+                  {
+                      "title": "thu nghiem 2",
+                      "desc": "thu nghiem",
+                      "img": "thu nghiem",
+                      "categories": ["thu nghiem"],
+                      "size": ["thu nghiem"],
+                      "color": ["thu nghiem"],
+                      "price": 15,
+                      "Stock": 0
+                  }
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+              
+    get:
+      description: get all product
+      parameters:
+      - name: latest
+        in: query
+      - name: category
+        in: query
+      responses:
+        '200':
+          description: all product
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+              examples: {}
+        
+
+  /v1/product/{id}:
+    put:
+      description: Auto generated using Swagger Inspector
+      parameters: 
+      - name: id
+        in: path
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+            examples:
+              '0':
+                value: |-
+                  {
+                      "title": "thu nghiem 2",
+                      "desc": "thu nghiem",
+                      "img": "thu nghiem",
+                      "categories": ["thu nghiem"],
+                      "size": ["thu nghiem"],
+                      "color": ["thu nghiem"],
+                      "price": 15,
+                      "Stock": 0
+                  }
+      responses:
+        '200':
+          description: Product is updated
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+
+    delete:
+      description: Auto generated using Swagger Inspector
+      parameters: 
+      - name: id
+        in: path
+        required: true
+      responses:
+        '200':
+          description: Product is updated
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+
+  /v1/product/find/{id}:
+    get:
+      parameters: 
+      - name: id
+        in: path
+        required: true
+      responses:
+        '200':
+          description: get a product
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/schemas/Product'

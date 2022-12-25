@@ -1,6 +1,7 @@
 const express = require ('express')
 const auth = require('../../middlewares/auth');
-const productController = require('../../controllers/product.controller')
+const productController = require('../../controllers/product.controller');
+const swaggerJSDoc = require('swagger-jsdoc');
 
 const router = express.Router();
 
@@ -12,3 +13,4 @@ router.get("/", productController.getAllProduct);
 
 
 module.exports = router;
+
