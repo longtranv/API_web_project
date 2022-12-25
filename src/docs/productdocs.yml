@@ -1,6 +1,7 @@
 openapi: 3.0.1
 info:
   title: Product
+  tags: Product
   description: Product Management
   version: '0.1'
 servers:
@@ -8,7 +9,6 @@ servers:
 paths:
   /v1/product:
     post:
-      tags: product
       description: Auto generated using Swagger Inspector
       requestBody:
         content:
