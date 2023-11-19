@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-express-deployment
+  labels:
+    app: nodejs-express
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-express
+  template:
+    metadata:
+      labels:
+        app: nodejs-express
+    spec:
+      containers:
+        - name: nodejs-express-container
+          image: longtranv/hephanbo-thuc-hanh:latest
+          ports:
+            - containerPort: 3000
+          # Add additional settings as needed, e.g., environment variables, volumes, etc.
